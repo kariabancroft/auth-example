@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      redirect_to dashboard_path(@user)
+      redirect_to home_path
     else
       flash.now[:error] = "Try again!"
       render 'new'
