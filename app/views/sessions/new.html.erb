@@ -1,0 +1,19 @@
+<h1>Sign in</h1>
+<!-- is this the correct syntax? -->
+<% if flash.now[:error]  %>
+  <%= flash.now[:error]  %>
+<% end  %>
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+  <div class="">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="">
+    <%= f.submit "Sign in" %>
+  </div>
+<% end %>
